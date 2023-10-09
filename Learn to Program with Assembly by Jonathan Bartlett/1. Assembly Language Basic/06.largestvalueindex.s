@@ -21,7 +21,7 @@ _start:
 myloop:
   movq mynumbers(,%rbx,8), %rax # get the next value of mynumbers indexed by %rbx
   cmp %rdi, %rax # if it is not bigger, go to the end of the loop
-  jbe loopcontrol
+  jbe loopcontrol #if rax < rdi (rax below or equal to rdi) is true then jump
   movq %rax, %rdi # otherwise, store this as the biggest element so far
 loopcontrol:
   incq %rbx # Move %rbx to the next index
